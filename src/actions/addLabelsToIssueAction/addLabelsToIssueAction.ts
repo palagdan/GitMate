@@ -33,7 +33,7 @@ export const addLabelToIssueAction = async (): Promise<void> => {
 
         const params: OpenAI.Chat.ChatCompletionCreateParams = {
             messages: [{ role: 'user', content: prompt }],
-            model: 'gpt-4',
+            model: 'gpt-4o',
         };
 
         const chatCompletion = await client.chat.completions.create(params);
