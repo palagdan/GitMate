@@ -1,0 +1,15 @@
+{
+  "action": "opened",
+  "issue": {
+    "url": "https://github.com/palagdan/GitMate",
+    "repository_url": "https://api.github.com/repos/your-org/your-repo",
+    "labels": [],
+    "state": "open",
+    "title": "Example Issue Title",
+    "body": "This is the body of the issue.",
+    "user": {
+      "login": "",
+      "id": 12345
+    }
+  }
+}

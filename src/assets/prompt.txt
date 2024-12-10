@@ -1,0 +1,14 @@
+You are a GitHub assistant tasked with determining the appropriate labels for a new issue.
+The issue details are:
+Issue Title: "{{issueTitle}}"
+Issue Body: "{{issueBody}}"
+
+Based on the title and body, choose one or more labels from the following available labels:
+{{availableLabels}}
+
+Response Format:
+{
+  "labels": ["label1", "label2", ...]
+}
+
+Please provide your response strictly in the specified format, with a list of labels that should be added to the issue.

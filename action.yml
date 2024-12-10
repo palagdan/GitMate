@@ -1,0 +1,19 @@
+name: 'GitMate'
+description: 'GitMate is your buddy in a development world'
+
+inputs:
+  mode:
+    description: 'Mode for the bot'
+    required: true
+    default: 'mirror'
+  openai-api-key:
+    description: 'OpenAI API Key'
+    required: true
+  github-token:
+    description: 'GITHUB_TOKEN'
+    required: true
+    default: ${{ github.token }}
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

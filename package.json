@@ -1,0 +1,25 @@
+{
+  "name": "gitmate",
+  "version": "1.0.0",
+  "description": "Conversational AI for GitHub Workflows This project integrates a conversational AI assistant to streamline software development workflows for the Knowledge-based and Software Systems Group (KBSS). The AI automates tasks like issue tracking, pull request management, and code reviews within the GitHub framework.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": " ./scripts/build.sh",
+    "clean": "rm -rf ./dist"
+  },
+  "type": "commonjs",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0",
+    "openai": "^4.76.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@vercel/ncc": "^0.38.3",
+    "typescript": "^5.7.2"
+  }
+}
