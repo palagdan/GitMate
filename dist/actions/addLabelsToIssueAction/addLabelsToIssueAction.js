@@ -3,6 +3,9 @@ import * as github from '@actions/github';
 import { OpenAI } from 'openai';
 import * as fs from 'fs';
 import * as path from 'path';
+import { fileURLToPath } from "node:url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 export const addLabelToIssueAction = async () => {
     try {
         const apiKey = core.getInput("openai-api-key");

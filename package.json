@@ -4,9 +4,10 @@
   "description": "Conversational AI for GitHub Workflows This project integrates a conversational AI assistant to streamline software development workflows for the Knowledge-based and Software Systems Group (KBSS). The AI automates tasks like issue tracking, pull request management, and code reviews within the GitHub framework.",
   "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build src/index.ts -o dist"
   },
-  "type": "module",
+  "type": "commonjs",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.1",
+    "@vercel/ncc": "^0.38.3",
     "typescript": "^5.7.2"
   }
 }

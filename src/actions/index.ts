@@ -1,1 +1,1 @@
-export * from './addLabelsToIssueAction/index.js';
+export * from './addLabelsToIssueAction';

@@ -1,1 +1,1 @@
-export * from './fsUtils.js'
+export * from './fsUtils'

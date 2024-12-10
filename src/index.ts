@@ -1,7 +1,7 @@
 import * as core from '@actions/core';
 import * as github from '@actions/github';
-import { ISSUE_LABEL } from './constants/index.js';
-import {addLabelToIssueAction} from "./actions/index.js";
+import { ISSUE_LABEL } from './constants';
+import {addLabelToIssueAction} from "./actions";
 
 
 async function run(): Promise<void> {

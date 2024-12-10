@@ -4,10 +4,6 @@ import { OpenAI } from 'openai';
 import {loadFile} from '../../utils/fsUtils.js';
 import * as fs from 'fs';
 import * as path from 'path';
-import {fileURLToPath} from "node:url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 export const addLabelToIssueAction = async (): Promise<void> => {
     try {
