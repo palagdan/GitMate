@@ -1,7 +1,7 @@
 import * as core from '@actions/core';
 import * as github from '@actions/github';
-import { ISSUE_LABEL } from './constants';
-import { addLabelsToIssueAction } from './actions';
+import { ISSUE_LABEL } from './constants/index.js';
+import {addLabelToIssueAction} from "./actions/index.js";
 
 
 async function run(): Promise<void> {
@@ -10,7 +10,7 @@ async function run(): Promise<void> {
 
         switch (mode) {
             case ISSUE_LABEL:
-                await addLabelsToIssueAction();
+                await addLabelToIssueAction();
                 break;
             default:
                 core.setFailed('Mode is not supported');

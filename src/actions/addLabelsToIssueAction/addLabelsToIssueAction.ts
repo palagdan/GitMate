@@ -1,10 +1,10 @@
 import * as core from '@actions/core';
 import * as github from '@actions/github';
 import { OpenAI } from 'openai';
-import {loadFile} from '@/utils';
+import {loadFile} from '../../utils/fsUtils.js';
 
 
-const addLabelToIssueAction = async (): Promise<void> => {
+export const addLabelToIssueAction = async (): Promise<void> => {
     try {
         const apiKey: string = core.getInput("openai-api-key");
         const githubToken: string = core.getInput("github-token");
@@ -82,4 +82,4 @@ const createAddLabelsToIssuePrompt = (
         .replace('{{availableLabels}}', availableLabels.join(", "));
 };
 
-export default addLabelToIssueAction;
+

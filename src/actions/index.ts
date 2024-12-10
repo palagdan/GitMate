@@ -1,3 +1,1 @@
-import addLabelsToIssueAction from "./addLabelsToIssueAction";
-
-export { addLabelsToIssueAction };
+export * from './addLabelsToIssueAction/index.js';

@@ -1,4 +1,1 @@
-import addLabelsToIssue from './addLabelsToIssueAction'
-
-
-export default addLabelsToIssue;
+export * from './addLabelsToIssueAction.js'

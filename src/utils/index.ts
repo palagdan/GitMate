@@ -1,3 +1,1 @@
-import {loadFile} from './fsUtils'
-
-export {loadFile};
+export * from './fsUtils.js'

@@ -1,17 +1,23 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "ESNext",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "target": "ES2020",                      // Choose ECMAScript version (e.g., ES2020, ES6)
+    "module": "ESNext",                       // Use ES modules
+    "moduleResolution": "node",               // Resolve modules like Node.js
+    "outDir": "./dist",                       // Output directory for compiled files
+    "esModuleInterop": true,                  // Enable compatibility with CommonJS modules
+    "skipLibCheck": true,                     // Skip checking declaration files for libraries
+    "forceConsistentCasingInFileNames": true, // Enforce consistent file casing
+    "strict": true,                           // Enable strict type-checking options
+    "resolveJsonModule": true,                // Allow importing JSON files
+    "allowJs": true,                          // Allow JavaScript files to be compiled
+    "isolatedModules": true,                  // Ensures the code can be compiled with isolated modules (important for bundlers)
+    "noEmitOnError": true                     // Do not emit output if there are any errors
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*.ts"                             // Include all TypeScript files in the 'src' directory
+  ],
+  "exclude": [
+    "node_modules",                           // Exclude 'node_modules' folder
+    "dist"                                    // Exclude the output directory
+  ]
 }
