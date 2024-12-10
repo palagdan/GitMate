@@ -14,10 +14,10 @@
     "noEmitOnError": true                     // Do not emit output if there are any errors
   },
   "include": [
-    "src/**/*.ts"                             // Include all TypeScript files in the 'src' directory
+    "src/**/*",
   ],
   "exclude": [
-    "node_modules",                           // Exclude 'node_modules' folder
-    "dist"                                    // Exclude the output directory
+    "node_modules",
+    "dist"
   ]
 }

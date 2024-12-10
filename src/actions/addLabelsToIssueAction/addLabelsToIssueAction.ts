@@ -2,6 +2,8 @@ import * as core from '@actions/core';
 import * as github from '@actions/github';
 import { OpenAI } from 'openai';
 import {loadFile} from '../../utils/fsUtils.js';
+import * as fs from 'fs';
+import * as path from 'path';
 
 
 export const addLabelToIssueAction = async (): Promise<void> => {
@@ -24,7 +26,7 @@ export const addLabelToIssueAction = async (): Promise<void> => {
             issue.data.title,
             issue.data.body || '',
             availableLabels.data.map(label => label.name),
-            './promptTemplate.txt'
+            path.join(__dirname, 'promptTemplate.txt')
         );
 
         core.debug(`Prompt: ${prompt}`);
@@ -75,7 +77,7 @@ const createAddLabelsToIssuePrompt = (
     availableLabels: string[],
     templateFilePath: string
 ): string => {
-    const template = loadFile(templateFilePath);
+    const template = fs.readFileSync(templateFilePath, 'utf-8');
     return template
         .replace('{{issueTitle}}', issueTitle)
         .replace('{{issueBody}}', issueBody)

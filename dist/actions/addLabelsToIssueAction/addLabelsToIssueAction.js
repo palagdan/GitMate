@@ -1,7 +1,8 @@
 import * as core from '@actions/core';
 import * as github from '@actions/github';
 import { OpenAI } from 'openai';
-import { loadFile } from '../../utils/fsUtils.js';
+import * as fs from 'fs';
+import * as path from 'path';
 export const addLabelToIssueAction = async () => {
     try {
         const apiKey = core.getInput("openai-api-key");
@@ -14,7 +15,7 @@ export const addLabelToIssueAction = async () => {
         const availableLabels = await octokit.rest.issues.listLabelsForRepo({
             ...github.context.repo,
         });
-        const prompt = createAddLabelsToIssuePrompt(issue.data.title, issue.data.body || '', availableLabels.data.map(label => label.name), './promptTemplate.txt');
+        const prompt = createAddLabelsToIssuePrompt(issue.data.title, issue.data.body || '', availableLabels.data.map(label => label.name), path.join(__dirname, 'promptTemplate.txt'));
         core.debug(`Prompt: ${prompt}`);
         const client = new OpenAI({ apiKey });
         const params = {
@@ -52,7 +53,7 @@ export const addLabelToIssueAction = async () => {
  * @returns The generated prompt string.
  */
 const createAddLabelsToIssuePrompt = (issueTitle, issueBody, availableLabels, templateFilePath) => {
-    const template = loadFile(templateFilePath);
+    const template = fs.readFileSync(templateFilePath, 'utf-8');
     return template
         .replace('{{issueTitle}}', issueTitle)
         .replace('{{issueBody}}', issueBody)
