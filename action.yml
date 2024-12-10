@@ -6,7 +6,14 @@ inputs:
     description: 'Mode for the bot'
     required: true
     default: 'mirror'
+  openai-api-key:
+    description: 'OpenAI API Key'
+    required: true
+  github-token:
+    description: 'GITHUB_TOKEN'
+    required: true
+    default: ${{ github.token }}
 
 runs:
   using: 'node20'
-  main: 'dist/index.ts'
+  main: 'dist/index.js'
