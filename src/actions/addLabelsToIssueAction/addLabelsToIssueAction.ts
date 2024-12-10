@@ -1,7 +1,6 @@
 import * as core from '@actions/core';
 import * as github from '@actions/github';
 import { OpenAI } from 'openai';
-import {loadFile} from '../../utils/fsUtils.js';
 import * as fs from 'fs';
 import * as path from 'path';
 
